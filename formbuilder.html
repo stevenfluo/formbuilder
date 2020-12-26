@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Form Builder (Chrome)</title>
+<script src="formbuilder.js" defer></script>
+<style>
+    @import "reset.css";
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #leftcolumn {
+        margin: 20px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #rightcolumn {
+        margin: 20px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .tabs {
+        font-weight: bold;
+        font-size: 14pt;
+        font-family: sans-serif;
+        padding: 4px;
+    }
+
+    #headingtab {
+        border: 4px solid black;
+        background-color: red;
+    }
+
+    #textedittab {
+        border: 4px solid black;
+        background: green;
+    }
+
+    #buttontab {
+        border: 4px solid black;
+        background: blue;
+    }
+
+    .entryform {
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    #clearall {
+        margin-top: 10px;
+    }
+
+</style>
+</head>
+
+<body>
+    <div id="leftcolumn">
+        <h1>Form Builder</h1>
+        <table>
+            <tr>
+                <td><p class="tabs" id="headingtab">Heading</p></td>
+                <td><p class="tabs" id="textedittab">Text Edit</p></td>
+                <td><p class="tabs" id="buttontab">Button</p></td>
+            </tr>
+        </table>
+
+        <form id="headingform" class="entryform">
+            Heading Title: <input type="text" id="headingtitle" name="headingtitle"/><br>
+            <input type="checkbox" id="headingitalicized"/> Italicized<br>
+            <button id="addheading" form="headingform" type="button">Add Heading</button>
+        </form>
+
+        <form id="texteditform" class="entryform">
+            Text Field Title: <input type="text" id="textfieldtitle" name="textfieldtitle"/><br>
+            Initial Value: <input type="text" id="initialvalue" name="initialvalue"/><br>
+            <button id="addtext" form="texteditform" type="button">Add Text</button>
+        </form>
+
+        <form id="buttonform" class="entryform">
+            Button Title: <input type="text" id="buttontitle" name="buttontitle"/><br>
+            <button id="addbutton" form="buttonform" type="button">Add Button</button>
+        </form>
+
+        <button id="clearall">Clear All</button>
+
+
+    </div>
+
+    <div id="rightcolumn">
+        <form id="form">
+        </form>
+    </div>
+</body>
+
+</html>
